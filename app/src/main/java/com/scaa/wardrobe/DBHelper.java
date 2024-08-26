@@ -19,7 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("create table user (name TEXT, email TEXT primary key, password TEXT)");
-        MyDB.execSQL("create table cloth (name TEXT, uuid TEXT primary key, type TEXT, size TEXT, colour TEXT)");
+        MyDB.execSQL("create table cloth (name TEXT, uuid TEXT primary key, type TEXT, size TEXT, colour TEXT, season TEXT)");
 
     }
 
@@ -46,7 +46,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean saveClothing(String name, String uuid, String type, String size, String colour) {
+    public boolean saveClothing(String name, String uuid, String type, String size, String colour, String season) {
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("name", name);
@@ -54,6 +54,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("type", type);
         values.put("size", size);
         values.put("colour", colour);
+        values.put("season", season);
 
         long result = myDB.insert("cloth", null, values);
         if (result == -1) {
