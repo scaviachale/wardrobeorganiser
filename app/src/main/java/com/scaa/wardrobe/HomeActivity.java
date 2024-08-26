@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-public class HomeActivity extends WardrobeOrganiserApplicationActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends WardrobeOrganiserApplicationActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

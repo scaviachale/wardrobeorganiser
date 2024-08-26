@@ -2,9 +2,7 @@ package com.scaa.wardrobe;
 
 import android.os.Bundle;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-public class WardrobeActivity extends WardrobeOrganiserApplicationActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class WardrobeActivity extends WardrobeOrganiserApplicationActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

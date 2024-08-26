@@ -2,6 +2,8 @@ package com.scaa.wardrobe;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         String userEmail = email.getText().toString();
         String userPassword = password.getText().toString();
 
-        if (username.equals("") || userEmail.equals("") || userPassword.isEmpty()) {
+        if (username.equals("") || userEmail.equals("") || userPassword.isEmpty() || !isValidEmail(userEmail)) {
             Toast.makeText(MainActivity.this, "Please complete all fields", Toast.LENGTH_SHORT).show();
         } else {
             Boolean checkUserExistence = dbHelper.checkUserExists(userEmail);
@@ -55,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+
+    public static boolean isValidEmail(CharSequence userEmail) {
+        return (!TextUtils.isEmpty(userEmail) && Patterns.EMAIL_ADDRESS.matcher(userEmail).matches());
     }
 
     public void onBtnSignInClick(View view) {

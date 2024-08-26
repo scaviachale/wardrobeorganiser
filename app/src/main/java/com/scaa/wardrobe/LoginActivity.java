@@ -2,6 +2,8 @@ package com.scaa.wardrobe;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,11 +36,11 @@ public class LoginActivity extends AppCompatActivity {
         String userEmail = email.getText().toString();
         String userPassword = password.getText().toString();
 
-        if (userPassword.isEmpty() || userEmail.isEmpty()) {
+        if (userPassword.isEmpty() || (userEmail.isEmpty())) {
             Toast.makeText(LoginActivity.this, "Complete all fields", Toast.LENGTH_SHORT).show();
         } else {
-            Boolean checkUserEmailAndPassword = dbHelper.checkUsernameAndPassword(userEmail, userPassword);
-            if (checkUserEmailAndPassword == true) {
+            boolean checkUserEmailAndPassword = dbHelper.checkUsernameAndPassword(userEmail, userPassword);
+            if (checkUserEmailAndPassword) {
                 Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
                 session.setUsername(userEmail);
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
