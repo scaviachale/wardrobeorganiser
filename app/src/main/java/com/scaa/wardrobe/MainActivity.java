@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.scaa.wardrobe.repositories.DBHelper;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText name, email, password;

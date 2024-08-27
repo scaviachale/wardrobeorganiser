@@ -1,14 +1,16 @@
-package com.scaa.wardrobe;
+package com.scaa.wardrobe.entities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Clothes extends AppCompatActivity {
+import com.scaa.wardrobe.R;
+
+public class Gadgets extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clothes);
+        setContentView(R.layout.activity_gadgets);
     }
 }

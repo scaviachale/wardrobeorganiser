@@ -1,4 +1,4 @@
-package com.scaa.wardrobe;
+package com.scaa.wardrobe.repositories;
 
 import android.content.ContentValues;
 import android.content.Context;
