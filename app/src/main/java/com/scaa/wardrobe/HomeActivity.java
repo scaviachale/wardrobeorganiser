@@ -17,11 +17,14 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     BottomNavigationView bottomNavigationView;
     TextView username;
     UserSession session;
+    OfferedServices offeredServices = new OfferedServices();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        session = new UserSession(this);
 
         username = findViewById(R.id.textUsername);
         username.setText(session.getUsername());
@@ -42,9 +45,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
                 break;// action with ID action_refresh was selected
             case R.id.menuServices:
-                //getSupportFragmentManager().beginTransaction().replace(R.id.offeredServicesFragment, offeredServices).commit();
-                startActivity(new Intent(getApplicationContext(), ServicesOfferedActivity.class));
-                finish();
+                getSupportFragmentManager().beginTransaction().replace(R.id.offeredServicesFragment, offeredServices).commit();
                 break;
             // action with ID action_settings was selected
             case R.id.menuLogout:

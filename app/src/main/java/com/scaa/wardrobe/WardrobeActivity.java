@@ -14,13 +14,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class WardrobeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    TextView username;
     UserSession session;
+    OfferedServices offeredServices = new OfferedServices();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wardrobe);
+        session = new UserSession(this);
         bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.menuHome);
@@ -37,9 +38,7 @@ public class WardrobeActivity extends AppCompatActivity implements BottomNavigat
 
                 break;// action with ID action_refresh was selected
             case R.id.menuServices:
-                //getSupportFragmentManager().beginTransaction().replace(R.id.offeredServicesFragment, offeredServices).commit();
-                startActivity(new Intent(getApplicationContext(), ServicesOfferedActivity.class));
-                finish();
+                getSupportFragmentManager().beginTransaction().replace(R.id.offeredServicesFragment, offeredServices).commit();
                 break;
             // action with ID action_settings was selected
             case R.id.menuLogout:
