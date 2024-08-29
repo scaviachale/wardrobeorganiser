@@ -65,6 +65,11 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+    }
+
     public void openWardrobe(View view) {
         Intent intent = new Intent(getApplicationContext(), WardrobeActivity.class);
         startActivity(intent);
