@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         }
         return true;
     }
+
     public void openWardrobe(View view) {
         Intent intent = new Intent(getApplicationContext(), WardrobeActivity.class);
         startActivity(intent);
