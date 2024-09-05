@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
-            android:text="Clothes"
+            android:text="Cloth"
             android:textColor="@color/colorWhite"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -34,7 +34,7 @@
             android:layout_height="50dp"
             android:layout_marginEnd="15dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/wardrobe"
+            android:src="@drawable/icon_coat"
             app:layout_constraintBottom_toBottomOf="@id/textWardrobePage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/textWardrobePage" />
