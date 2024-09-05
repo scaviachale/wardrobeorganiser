@@ -3,6 +3,7 @@ package com.scaa.wardrobe;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.scaa.wardrobe.entities.ClothesActivity;
 
 public class WardrobeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -55,5 +57,10 @@ public class WardrobeActivity extends AppCompatActivity implements BottomNavigat
                 break;
         }
         return true;
+    }
+
+    public void viewClothes(View view) {
+        Intent intent = new Intent(WardrobeActivity.this, ClothesActivity.class);
+        startActivity(intent);
     }
 }
